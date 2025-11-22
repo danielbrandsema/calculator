@@ -15,31 +15,16 @@ function divide(a, b) {
     return (a / b);
 }
 
-function operate(operator, a, b) {
-    switch (operator) {
-        case '+':
-            return add(a, b);
-        case '-':
-            return subtract(a, b);
-        case '*':
-            return multiply(a, b);
-        case '/':
-            return divide(a, b);
-        default:
-            return "Unknown operator";
-    }
-}
-
 let currentInput = '';
 let currentOperation = '';
 let previousInput = '';
 
-function appendNumber(number) {
+function chooseNum(number) {
     currentInput += number;
-    document.getElementById('display').value = `${previousInput} ${currentOperation} ${currentInput}`;
+    document.getElementById('display').value = currentInput
 }
 
-function appendOperation(operation) {
+function chooseOperator(operation) {
     if (currentInput === '') return;
     if (previousInput !== '') {
         calculate(); // Calculate the previous operation before appending a new one
@@ -47,40 +32,38 @@ function appendOperation(operation) {
     currentOperation = operation;
     previousInput = currentInput;
     currentInput = '';
-    document.getElementById('display').value = `${previousInput} ${currentOperation}`;
+    document.getElementById('display').value = previousInput;
 }
 
 function calculate() {
     if (previousInput === '' || currentInput === '') return;
+    let a = parseFloat(previousInput);
+    let b = parseFloat(currentInput);
     let result;
-    let prev = parseFloat(previousInput);
-    let current = parseFloat(currentInput);
 
     switch (currentOperation) {
         case '+':
-            result = prev + current;
+            result = add(a, b);
             break;
         case '-':
-            result = prev - current;
+            result = subtract(a, b);
             break;
         case '*':
-            result = prev * current;
+            result = multiply(a, b);
             break;
         case '/':
-            if (current === 0) {
-                alert("Cannot divide by zero");
-                return;
-            }
-            result = prev / current;
+            result = divide(a, b);
             break;
         default:
-        return;
+            return;
     }
+    
+    document.getElementById('display').value = result
+    ;
 
     currentInput = result.toString();
     currentOperation = '';
     previousInput = '';
-    document.getElementById('display').value = currentInput;
 }
 
 function clearDisplay() {
