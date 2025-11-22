@@ -37,6 +37,17 @@ function addDecimal() {
     document.getElementById('display').value = currentInput;
 }
 
+function getBack() {
+    currentInput = currentInput.slice(0, -1);
+    document.getElementById('display').value = currentInput;
+}
+
+function plusMinus() {
+    if (currentInput === '') return;
+    currentInput = (parseFloat(currentInput) * -1).toString();
+    document.getElementById('display').value = currentInput;    
+}
+
 //function for next step: choosing operator and next number:
 function chooseOperator(operation) {
     if (currentInput === '' && previousInput === '') return; //makes sure to start with a number (instead of an operator)

@@ -12,7 +12,7 @@
         <div class="buttons">
             <div class="buttons1">
                 <button class="button clear" onclick="clearDisplay()">C</button>
-                <button class="button back">Back</button>
+                <button class="button back" onclick="getBack()">Back</button>
                 <button class="button operator" onclick="chooseOperator('/')">/</button>
             </div>
            <div class="buttons2">
@@ -34,7 +34,7 @@
                 <button class="button operator" onclick="chooseOperator('+')">+</button>
             </div>
             <div class="buttons5">
-                <button class="button posneg">+/-</button>
+                <button class="button posneg" onclick="plusMinus()">+/-</button>
                 <button class="button number" onclick="chooseNum('0')">0</button>
                 <button class="button decimal" onclick="addDecimal()">.</button>
                 <button class="button equal" onclick="calculate()">=</button>
