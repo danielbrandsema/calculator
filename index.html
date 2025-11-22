@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'/>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="javascript.js"></script>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="calculator">
+        <input id="input screen" type="text" style="text-align: right;">
+        <div class="buttons">
+            <div class="buttons1">
+                <button class="button clear" onclick="clearDisplay()">C</button>
+                <button class="button back">Back</button>
+                <button class="button operator" onclick="chooseOperator('/')">/</button>
+            </div>
+           <div class="buttons2">
+                <button class="button number" onclick="chooseNum('7')">7</button>
+                <button class="button number" onclick="chooseNum('8')">8</button>
+                <button class="button number" onclick="chooseNum('9')">9</button>
+                <button class="button operator" onclick="chooseOperator('*')">X</button>
+            </div>
+            <div class="buttons3">
+                <button class="button number" onclick="chooseNum('4')">4</button>
+                <button class="button number" onclick="chooseNum('5')">5</button>
+                <button class="button number"onclick="chooseNum('6')">6</button>
+                <button class="button operator" onclick="chooseOperator('-')">-</button>
+            </div>
+           <div class="buttons4">
+                <button class="button number" onclick="chooseNum('1')">1</button>
+                <button class="button number" onclick="chooseNum('2')">2</button>
+                <button class="button number" onclick="chooseNum('3')">3</button>
+                <button class="button operator" onclick="chooseOperator('+')">+</button>
+            </div>
+            <div class="buttons5">
+                <button class="button posneg">+/-</button>
+                <button class="button number" onclick="chooseNum('0')">0</button>
+                <button class="button decimal">,</button>
+                <button class="button equal" onclick="equals('=')">=</button>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
