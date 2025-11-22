@@ -100,3 +100,23 @@ function clearDisplay() {
     currentOperation = null;
     document.getElementById('display').value = '';
 }
+
+document.addEventListener('keydown', function(e) {
+    const key = e.key;
+
+    if (key >= '0' && key <= '9') {
+        chooseNum(key);
+    } else if (key === '+' || key === '-' || key === '*' || key === '/') {
+        chooseOperator(key);
+    } else if (key === 'Enter' || key === '=') {
+        calculate();
+    } else if (key === 'Backspace') {
+        getBack();
+    } else if (key === '.' || key === ',') {
+        addDecimal();
+    } else if (key === 'Escape') {
+        clearDisplay();
+    } else if (key === '_') {
+        plusMinus();
+    }
+});
